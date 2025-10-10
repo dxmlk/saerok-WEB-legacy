@@ -1,0 +1,28 @@
+@import url("./assets/fonts/font.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply font-pretendard;
+}
+
+.section-fullscreen {
+  @apply w-full h-100dvh p-20;
+}
+
+/* 기본 상태 */
+.slide {
+  transform: scale(0.86);
+  opacity: 0.5;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  will-change: transform, opacity;
+}
+
+/* 활성 상태 */
+.slide.is-active {
+  transform: scale(1);
+  opacity: 1;
+  z-index: 2; /* 겹침 대비 */
+}
