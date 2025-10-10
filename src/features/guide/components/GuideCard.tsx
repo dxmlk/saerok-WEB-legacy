@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
+import guideButton from "@/src/assets/icons/guide-button.svg";
 
 interface GuideCardProps {
   imgSrc?: string;
@@ -70,11 +71,7 @@ const GuideCard = ({ imgSrc, children, moveTo, scale = 1 }: GuideCardProps) => {
           width: `${59 * scale}px`,
         }}
       >
-        <img
-          src="/src/assets/icons/guide-button.svg"
-          alt="Button"
-          className="w-full h-full"
-        />
+        <img src={guideButton} alt="Button" className="w-full h-full" />
       </button>
     </div>
   );

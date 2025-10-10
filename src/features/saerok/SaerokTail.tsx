@@ -1,3 +1,5 @@
+import qrCode from "@/src/assets/images/qr-code.png";
+
 interface ExploreTailProps {
   scale?: number;
 }
@@ -23,7 +25,7 @@ const ExploreTail = ({ scale = 1 }: ExploreTailProps) => {
         새록과 함께하세요
       </span>
       <img
-        src="/src/assets/images/qr-code.png"
+        src={qrCode}
         alt="QR Code"
         style={{
           marginBottom: `${9 * scale}px`,

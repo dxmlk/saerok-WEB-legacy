@@ -1,6 +1,8 @@
 "use client";
 import type { HTMLAttributes } from "react";
 import useSpotlightEffect from "@/hooks/useSpotlightEffect";
+import background from "@/src/assets/images/background.jpg";
+import notice from "@/src/assets/images/notice.png";
 
 interface SpotlightConfig {
   spotlightSize?: number; // px
@@ -46,7 +48,7 @@ const Hero = ({
       {/* 배경 이미지 */}
       <img
         className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none"
-        src="/src/assets/images/background.jpg"
+        src={background}
         alt=""
       />
 
@@ -81,7 +83,7 @@ const Hero = ({
             opacity: 0.7,
           }}
           className="absolute inset-0 w-full h-full"
-          src="/src/assets/images/notice.png"
+          src={notice}
         />
       </div>
     </main>

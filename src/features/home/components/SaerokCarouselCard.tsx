@@ -1,4 +1,5 @@
 import { ReactComponent as RectangleEdge } from "@/assets/images/edge.svg";
+import birdImage from "@/src/assets/images/BirdImg.png";
 
 interface SaerokCarouselCardProps {
   scale?: number;
@@ -24,7 +25,7 @@ const SaerokCarouselCard = ({ scale = 1 }: SaerokCarouselCardProps) => {
         >
           <img
             className="absolute inset-0 w-full h-auto object-cover"
-            src="/src/assets/images/BirdImg.png"
+            src={birdImage}
             alt="BirdImage"
           />
           <div className="absolute -bottom-6 left-0 flex -space-x-1 items-center">

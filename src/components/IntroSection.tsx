@@ -1,4 +1,5 @@
 import RoundButton from "@/components/RoundButton";
+import qrCode from "@/src/assets/images/qr-code.png";
 
 interface IntroSectionProps {
   mainText?: string;
@@ -54,11 +55,7 @@ const IntroSection = ({
           gap: `${16 * scale}px`,
         }}
       >
-        <img
-          src="/src/assets/images/qr-code.png"
-          alt="QR Code"
-          className="h-full"
-        />
+        <img src={qrCode} alt="QR Code" className="h-full" />
         {/* 이거 moveTo 수정해야 됨 */}
         <RoundButton text="앱 다운 받기" moveTo="home" scale={scale} />
       </div>
