@@ -1,5 +1,5 @@
 import RoundButton from "@/components/RoundButton";
-import qrCode from "@/src/assets/images/qr-code.png";
+import qrCode from "@/assets/images/qr-code.png";
 
 interface IntroSectionProps {
   mainText?: string;

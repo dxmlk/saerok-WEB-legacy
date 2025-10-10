@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
-import guideButton from "@/src/assets/icons/guide-button.svg";
+import guideButton from "@/assets/icons/guide-button.svg?url";
 
 interface GuideCardProps {
   imgSrc?: string;

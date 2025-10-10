@@ -1,5 +1,5 @@
 import { ReactComponent as RectangleEdge } from "@/assets/images/edge.svg";
-import birdImage from "@/src/assets/images/BirdImg.png";
+import birdImage from "@/assets/images/BirdImg.png";
 
 interface SaerokCarouselCardProps {
   scale?: number;

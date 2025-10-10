@@ -1,4 +1,4 @@
-import qrCode from "@/src/assets/images/qr-code.png";
+import qrCode from "@/assets/images/qr-code.png";
 
 interface ExploreTailProps {
   scale?: number;

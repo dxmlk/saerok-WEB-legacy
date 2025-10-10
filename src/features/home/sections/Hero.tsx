@@ -1,8 +1,8 @@
 "use client";
 import type { HTMLAttributes } from "react";
 import useSpotlightEffect from "@/hooks/useSpotlightEffect";
-import background from "@/src/assets/images/background.jpg";
-import notice from "@/src/assets/images/notice.png";
+import background from "@/assets/images/background.jpg";
+import notice from "@/assets/images/notice.png";
 
 interface SpotlightConfig {
   spotlightSize?: number; // px
