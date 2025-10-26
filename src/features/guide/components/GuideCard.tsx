@@ -36,7 +36,7 @@ const GuideCard = ({ imgSrc, children, moveTo, scale = 1 }: GuideCardProps) => {
   };
 
   const handleClick = () => {
-    navigate(`/${moveTo}`);
+    navigate(`/guide/${moveTo}`);
   };
 
   return (

@@ -67,18 +67,21 @@ const GuideCTA = ({ scale = 1 }: GuideCTAProps) => {
           title="탐조 에티켓"
           description="탐조할 때 지켜야 할 에티켓에 대해 알아보아요."
           scale={scale}
+          moveTo="etiquette"
         />
         <GuideBlock
           imgSrc={duckPink}
           title="탐조 장비"
           description="탐조할 때 들고다닐 장비에는 무엇이 있나요?"
           scale={scale}
+          moveTo="equipment"
         />
         <GuideBlock
           imgSrc={duckPurple}
           title="팁"
           description="그 외 도움이 되는 팁들을 알려드릴게요."
           scale={scale}
+          moveTo="tips"
         />
       </section>
     </main>

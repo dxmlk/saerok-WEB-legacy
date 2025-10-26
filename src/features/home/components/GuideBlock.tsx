@@ -1,8 +1,13 @@
+import { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { gsap } from "gsap";
+
 interface GuideBlockProps {
   imgSrc?: string;
   title?: string;
   description?: string;
   scale?: number;
+  moveTo?: string;
 }
 
 const GuideBlock = ({
@@ -10,10 +15,42 @@ const GuideBlock = ({
   title,
   description,
   scale = 1,
+  moveTo,
 }: GuideBlockProps) => {
+  const navigate = useNavigate();
+  const buttonRef = useRef<HTMLDivElement | null>(null);
+  const handleClick = () => {
+    navigate(`/guide/${moveTo}`);
+  };
+
+  useEffect(() => {
+    if (!buttonRef.current) return;
+    gsap.set(buttonRef.current, {
+      scale: 1,
+      transformOrigin: "center center",
+      willChange: "transform",
+    });
+  }, []);
+
+  const handleEnter = () => {
+    const el = buttonRef.current;
+    if (!el) return;
+    gsap.to(el, { scale: 1.04, duration: 0.28, ease: "power2.out" });
+  };
+
+  const handleLeave = () => {
+    const el = buttonRef.current;
+    if (!el) return;
+    gsap.to(el, { scale: 1, duration: 0.28, ease: "power2.out" });
+  };
+
   return (
     <div
-      className="w-full h-155 border-none rounded-20 bg-background-white py-25 pl-28 flex flex-row gap-25"
+      ref={buttonRef}
+      onClick={handleClick}
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
+      className="cursor-pointer w-full h-155 border-none rounded-20 bg-background-white py-25 pl-28 flex flex-row gap-25"
       style={{
         height: `${155 * scale}px`,
         borderRadius: `${20 * scale}px`,

@@ -19,7 +19,7 @@ const GuideMain = ({ scale = 1 }: GuideMainProps) => {
         gap: `${50 * scale}px`,
       }}
     >
-      <GuideCard imgSrc={DuckBlueSrc}>
+      <GuideCard imgSrc={DuckBlueSrc} scale={scale} moveTo="etiquette">
         <div
           className="text-background-white text-center"
           style={{
@@ -35,7 +35,7 @@ const GuideMain = ({ scale = 1 }: GuideMainProps) => {
           </span>
         </div>
       </GuideCard>
-      <GuideCard imgSrc={DuckPinkSrc}>
+      <GuideCard imgSrc={DuckPinkSrc} scale={scale} moveTo="equipment">
         <div
           className="text-background-white text-center"
           style={{
@@ -51,7 +51,7 @@ const GuideMain = ({ scale = 1 }: GuideMainProps) => {
           </span>
         </div>
       </GuideCard>
-      <GuideCard imgSrc={DuckPurpleSrc}>
+      <GuideCard imgSrc={DuckPurpleSrc} scale={scale} moveTo="tips">
         <div
           className="text-background-white text-center"
           style={{
