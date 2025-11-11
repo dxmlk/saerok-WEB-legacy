@@ -7,6 +7,8 @@ type Config = {
   fadeSpeed?: number; // 0~1
   glowColor?: string; // "#fff" | "#ffffff" | "255,255,255"
   pulseSpeed?: number; // ms (0이면 비활성)
+  overlayColor?: string;
+  overlayOpacity?: number;
 };
 
 function hexToRgbTuple(hex: string): string | null {
@@ -46,6 +48,8 @@ const useSpotlightEffect = (config: Config = {}) => {
     fadeSpeed = 0.1,
     glowColor = "#ffffff",
     pulseSpeed = 0,
+    overlayColor = "#4190FF",
+    overlayOpacity = 1,
   } = config;
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -88,7 +92,8 @@ const useSpotlightEffect = (config: Config = {}) => {
       targetY = -9999;
     };
 
-    const rgb = normalizeGlow(glowColor);
+    const rgbGlow = normalizeGlow(glowColor);
+    const rgbOverlay = normalizeGlow(overlayColor);
 
     const render = () => {
       x = lerp(x, targetX, fadeSpeed);
@@ -98,8 +103,8 @@ const useSpotlightEffect = (config: Config = {}) => {
 
       // 어두운 오버레이
       ctx.globalCompositeOperation = "source-over";
-      ctx.globalAlpha = 0.95; // 고정 오버레이 불투명도(필요하면 별도 파라미터로 뺄 수 있음)
-      ctx.fillStyle = "black";
+      ctx.globalAlpha = 1; // 고정 오버레이 불투명도(필요하면 별도 파라미터로 뺄 수 있음)
+      ctx.fillStyle = `rgba(${rgbOverlay}, ${overlayOpacity})`;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // 맥동(옵션)
@@ -154,14 +159,14 @@ const useSpotlightEffect = (config: Config = {}) => {
       //   };
 
       // (옵션) 외곽 글로우
-      //   ctx.globalCompositeOperation = "source-over";
-      //   const glow = ctx.createRadialGradient(x, y, 0, x, y, R * 1.2);
-      //   glow.addColorStop(0, `rgba(${rgb}, 0.2)`);
-      //   glow.addColorStop(1, "rgba(0, 0, 0, 0)");
-      //   ctx.fillStyle = glow;
-      //   ctx.beginPath();
-      //   ctx.arc(x, y, R * 1.2, 0, Math.PI * 2);
-      //   ctx.fill();
+      // ctx.globalCompositeOperation = "source-over";
+      // const glow = ctx.createRadialGradient(x, y, 0, x, y, R * 1.2);
+      // glow.addColorStop(0, `rgba(${rgbGlow}, 0.2)`);
+      // glow.addColorStop(1, "rgba(0, 0, 0, 0)");
+      // ctx.fillStyle = glow;
+      // ctx.beginPath();
+      // ctx.arc(x, y, R * 1.2, 0, Math.PI * 2);
+      // ctx.fill();
 
       raf = requestAnimationFrame(render);
     };

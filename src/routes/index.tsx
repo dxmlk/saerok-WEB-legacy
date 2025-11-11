@@ -18,7 +18,7 @@ export const createRouter = () => {
       children: [
         { path: "", element: <MainPage /> },
         { path: "saerok", element: <SaerokPage /> },
-        { path: "saerok/detail", element: <SaerokDetailPage /> },
+        { path: "saerok/detail/:id", element: <SaerokDetailPage /> },
         { path: "guide", element: <GuidePage /> },
         { path: "guide/etiquette", element: <EtiquettePage /> },
         { path: "guide/equipment", element: <EquipmentPage /> },

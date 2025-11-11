@@ -21,7 +21,8 @@ const AppInstallButton = ({
         alt="saerok-app-logo"
         style={{ height: `${22 * scale}px`, width: `${22 * scale}px` }}
       />
-      <span
+      <a
+        href="https://apps.apple.com/kr/app/%EC%83%88%EB%A1%9D-%EC%9D%BC%EC%83%81-%EC%86%8D%EC%9D%98-%ED%83%90%EC%A1%B0-%EC%9D%BC%EC%A7%80/id6744866662"
         className={`text-body-1 ${
           isFooter ? "font-400 text-background-white" : "font-700 text-mainBlue"
         } `}
@@ -31,7 +32,7 @@ const AppInstallButton = ({
         }}
       >
         새록 앱 설치
-      </span>
+      </a>
     </div>
   );
 };

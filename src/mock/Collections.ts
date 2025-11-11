@@ -1,4 +1,4 @@
-import type { CollectionItem } from "@/mock/CollectionType";
+import type { CollectionItem } from "@/features/saerok/CollectionType";
 
 export const mockCollections: CollectionItem[] = [
   {

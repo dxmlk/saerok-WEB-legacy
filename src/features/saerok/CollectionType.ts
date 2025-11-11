@@ -1,6 +1,7 @@
 export interface Bird {
   birdId: number;
   koreanName: string;
+  scientificName?: string;
 }
 
 export interface User {
@@ -25,4 +26,8 @@ export interface CollectionItem {
   suggestionUserCount: number | null;
   bird: Bird;
   user: User;
+}
+
+export interface CollectionItemList {
+  items: CollectionItem[];
 }

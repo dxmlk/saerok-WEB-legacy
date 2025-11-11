@@ -1,19 +1,20 @@
 import AppInstallButton from "./AppInstallButton";
 
 interface FooterProps {
+  isMobile?: boolean;
   scale?: number;
 }
 
-const Footer = ({ scale = 1 }: FooterProps) => {
+const Footer = ({ isMobile, scale = 1 }: FooterProps) => {
   return (
     <footer
       className="w-full bg-font-gray px-120 py-46 flex flex-col justify-start text-background-white text-body-1 font-400 "
       style={{
-        height: `${263 * scale}px`,
+        height: isMobile ? `${319 * scale}px` : `${263 * scale}px`,
         paddingTop: `${46 * scale}px`,
         paddingBottom: `${46 * scale}px`,
-        paddingLeft: `${120 * scale}px`,
-        paddingRight: `${120 * scale}px`,
+        paddingLeft: isMobile ? `${37 * scale}px` : `${120 * scale}px`,
+        paddingRight: isMobile ? `${37 * scale}px` : `${120 * scale}px`,
         fontSize: `${15 * scale}px`,
         lineHeight: `${18 * scale}px`,
       }}
@@ -42,20 +43,50 @@ const Footer = ({ scale = 1 }: FooterProps) => {
             gap: `${27 * scale}px`,
           }}
         >
-          <span>의견 보내기</span>
-          <span>개인정보처리방침</span>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdz8yDFArb6tP9em_Km5XjyTovDGSgHn9PpJ9dqXEqgJQ7lmg/viewform"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            의견 보내기
+          </a>
+          <a
+            href="https://shine-guppy-3de.notion.site/29d7cea87e058088a7cde5f3fc6622ad?pvs=143"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            개인정보처리방침
+          </a>
         </div>
-        <div
-          className="flex flex-row justify-end gap-27"
-          style={{
-            gap: `${27 * scale}px`,
-          }}
-        >
-          <span>의견 보내기</span>
-          <span>개인정보처리방침</span>
-        </div>
+        {!isMobile && (
+          <div
+            className="flex flex-row justify-end gap-27"
+            style={{
+              gap: `${27 * scale}px`,
+            }}
+          >
+            <span>웹사이트</span>
+            <a
+              href="https://www.instagram.com/saerok.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              인스타그램
+            </a>
+          </div>
+        )}
       </div>
       <span>Copyright</span>
+      {isMobile && (
+        <a
+          className="mt-30"
+          href="https://www.instagram.com/saerok.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src="/src/assets/icons/instagram.svg" />
+        </a>
+      )}
     </footer>
   );
 };

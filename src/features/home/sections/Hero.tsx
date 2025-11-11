@@ -2,7 +2,7 @@
 import type { HTMLAttributes } from "react";
 import useSpotlightEffect from "@/hooks/useSpotlightEffect";
 import background from "@/assets/images/background.jpg";
-import notice from "@/assets/images/notice.png";
+import GlassBall from "@/components/GlassBall";
 
 interface SpotlightConfig {
   spotlightSize?: number; // px
@@ -62,14 +62,18 @@ const Hero = ({
       <div
         className="absolute flex items-center justify-center "
         style={{
-          width: `${159 * scale}px`,
-          height: `${159 * scale}px`,
+          width: `${180 * scale}px`,
+          height: `${180 * scale}px`,
           right: `${60 * scale}px`,
           bottom: `${49 * scale}px`,
         }}
       >
+        <div className="absolute inset-0" style={{ opacity: 0.7 }}>
+          <GlassBall height="100%" />
+        </div>
+
         <div
-          className="relative z-10 text-center whitespace-pre-line text-white font-400"
+          className="relative z-10 text-center whitespace-pre-line text-white font-400 pointer-events-none"
           style={{
             fontSize: `${20 * scale}px`,
             lineHeight: `${20 * scale}px`,
@@ -78,13 +82,6 @@ const Hero = ({
         >
           {`망원경을 옮겨서 숨은\n새들을 찾아보세요!`}
         </div>
-        <img
-          style={{
-            opacity: 0.7,
-          }}
-          className="absolute inset-0 w-full h-full"
-          src={notice}
-        />
       </div>
     </main>
   );

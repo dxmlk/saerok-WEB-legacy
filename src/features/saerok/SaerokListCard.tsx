@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import type { CollectionItem } from "@/mock/CollectionType";
+import type { CollectionItem } from "@/features/saerok/CollectionType";
 import NicknameBadge from "./NicknameBadge";
 import { ReactComponent as LocationIcon } from "@/assets/icons/location.svg";
 import { ReactComponent as DateIcon } from "@/assets/icons/date.svg";
@@ -62,7 +62,7 @@ const SaerokListCard = ({ scale = 1, item }: SaerokListCardProps) => {
     //   gsap.to(innerRef.current, { scale: 1, duration: DURATION, ease: EASE });
   };
   const handleClick = () => {
-    navigate(`/saerok/detail`);
+    navigate(`/saerok/detail/${item.collectionId}`);
   };
 
   return (

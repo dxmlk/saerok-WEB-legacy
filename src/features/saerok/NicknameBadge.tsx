@@ -1,4 +1,4 @@
-import type { User } from "@/mock/CollectionType";
+import type { User } from "@/features/saerok/CollectionType";
 
 interface NicknameBadgeProps {
   user: User;

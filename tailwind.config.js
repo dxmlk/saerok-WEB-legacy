@@ -27,6 +27,7 @@ const EXTRA = {
   25: pxToRem(25),
   27: pxToRem(27),
   28: pxToRem(28),
+  30: pxToRem(30),
   36: pxToRem(36),
   40: pxToRem(40),
   43: pxToRem(43),

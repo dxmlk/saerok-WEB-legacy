@@ -1,16 +1,22 @@
+import { useCuratedCollections } from "@/hooks/useCuratedSaeroks";
 import SaerokListCard from "./SaerokListCard";
-import { mockCollections } from "@/mock/Collections";
 
 interface SaerokListProps {
   scale?: number;
 }
 
 const SaerokList = ({ scale = 1 }: SaerokListProps) => {
-  const items = mockCollections;
+  const curatedIds = [1352, 1259, 1106, 2, 1052, 158, 304, 402];
 
-  const mid = Math.ceil(items.length / 2);
-  const left = items.slice(0, mid);
-  const right = items.slice(mid);
+  const { data, loading, error } = useCuratedCollections(curatedIds);
+
+  if (loading) return <></>;
+  if (error) return <></>;
+  if (!data || data.length === 0) return <></>;
+
+  const mid = Math.ceil(data.length / 2);
+  const left = data.slice(0, mid);
+  const right = data.slice(mid);
 
   return (
     <div
