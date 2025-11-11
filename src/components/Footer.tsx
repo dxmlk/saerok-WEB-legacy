@@ -1,4 +1,5 @@
 import AppInstallButton from "./AppInstallButton";
+import { ReactComponent as InstagramIcon } from "@/assets/icons/instagram.svg";
 
 interface FooterProps {
   isMobile?: boolean;
@@ -84,7 +85,7 @@ const Footer = ({ isMobile, scale = 1 }: FooterProps) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/src/assets/icons/instagram.svg" />
+          <InstagramIcon />
         </a>
       )}
     </footer>
